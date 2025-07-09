@@ -49,21 +49,30 @@ pip install -r requirements.txt
 
 ## ⚙️ CONFIGURACIÓN
 
-### 1. Configurar Google Cloud Console
+### 🛠️ 1. Configurar Google Cloud Console
 - Crear proyecto en [Google Cloud Console](https://console.cloud.google.com/)
 - Habilitar Google Sheets API y Google Drive API
 - Crear cuenta de servicio y descargar credenciales JSON
 
-### 2. Crear hoja de Google Sheets
+### 📄 2. Crear hoja de Google Sheets
 - Crear nueva hoja llamada `FrozenLake_QTable`
 - Compartir con el email de la cuenta de servicio (permisos de Editor)
 
-### 3. Configurar variables de entorno
+### 🌱 3. Configurar variables de entorno
 Crear archivo `.env` en la raíz del proyecto:
 ```env
 GOOGLE_APPLICATION_CREDENTIALS_JSON={"type":"service_account",...}
 SPREADSHEET_NAME=FrozenLake_QTable
 ```
+
+### 🔑 4. Preparar archivo de credenciales
+
+1. **Copia el archivo de ejemplo:**
+   ```bash
+   cp credentials/frozenlake_credentials.example.json credentials/frozenlake_credentials.json
+   ```
+2. **Descarga tus credenciales reales** desde Google Cloud Console (cuenta de servicio).
+3. **Reemplaza los valores correspondientes** en `credentials/frozenlake_credentials.json` con los datos reales de tu archivo JSON.
 
 ## 🧪 PROBAR LA CONEXIÓN
 ```bash
@@ -100,9 +109,6 @@ Al terminar de trabajar:
 ```bash
 deactivate
 ```
-
-## 📄 LICENCIA
-Este proyecto está bajo la Licencia MIT.
 
 ---
 ⚡ **Creado para aprender Q-Learning de forma visual e interactiva**
